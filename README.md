@@ -6,8 +6,6 @@ Basic command line app written in Go to print out the current menu for the dinin
 
 ```
 go get github.com/gronnesby/gofood
-
-go install gofood
 ```
 
 
