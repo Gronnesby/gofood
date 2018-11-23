@@ -29,8 +29,8 @@ func Scrape(body string, unlimstr bool, tabprint bool) map[string][]string {
 	location := strings.TrimSpace(doc.Find("div", "id", "jumbotronFeature").Find("h1").Text())
 
 	// Print the location in bold yellow text
-	color.Set(color.FgYellow, color.Bold)
-	fmt.Printf("-- %s --\n", location)
+	color.Set(color.FgGreen, color.Bold)
+	fmt.Printf("<<<- %s ->>>\n\n", location)
 	color.Unset()
 
 	// Find all the meal cards
@@ -44,8 +44,8 @@ func Scrape(body string, unlimstr bool, tabprint bool) map[string][]string {
 		}
 
 		// Print the meal type in bold
-		color.Set(color.Bold)
-		fmt.Println(m.Find("div", "class", "card-header").Find("h5", "class", "mealName").Text())
+		color.Set(color.FgHiYellow, color.Bold)
+		fmt.Printf("--- %s ---\n", m.Find("div", "class", "card-header").Find("h5", "class", "mealName").Text())
 		color.Unset()
 
 		var menus []Menu
